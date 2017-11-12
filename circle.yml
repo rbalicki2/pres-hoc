@@ -3,8 +3,6 @@ machine:
     version: 8.0.0
 
 dependencies:
-  cache_directories:
-    - node_modules
   override:
     - npm prune && npm config set registry http://registry.npmjs.org/
     # Install dependencies
