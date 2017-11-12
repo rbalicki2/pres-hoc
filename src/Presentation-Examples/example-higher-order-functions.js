@@ -4,9 +4,10 @@
 const sum = (x, y) => x + y;
 
 // higher order function
-const addX = x => y => x + y;
-const add2 = addX(2);
-console.log(add2(10)); // 12
+const makeAdder = x => y => x + y;
+const add2 = makeAdder(2);
+
+sum(2,2) === add2(2); // DUH
 
 
 

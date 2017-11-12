@@ -13,7 +13,7 @@ import React from 'react';
 // }
 
 const addExtraLogging = (WrappedComponent) =>
-(props) => {
+  (props) => {
     console.log(`Rendering ${WrappedComponent.displayName}`);
     console.log(props);
     return <WrappedComponent {...this.props} />;

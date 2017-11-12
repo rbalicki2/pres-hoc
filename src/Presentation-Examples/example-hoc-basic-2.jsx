@@ -14,6 +14,6 @@ import addExtraLogging from './example-hoc-basic';
 // export const GoodJobDivWithLogged = addExtraLogging(GoodJobDiv);
 
 const GoodJobComponent = (props) =>
-<div>You did a good job, { this.props.name }!</div>;
+  <div>You did a good job, { this.props.name }!</div>;
 
 export default addExtraLogging(GoodJobComponent);
