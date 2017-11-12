@@ -2,10 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
-import Routes from 'src/Routes';
+import Main from 'src/components/Main';
 
 const renderApp = () => render(
-  <AppContainer><Routes /></AppContainer>,
+  <AppContainer><Main /></AppContainer>,
   document.getElementById('app')
 );
 
