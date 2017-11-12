@@ -16,15 +16,16 @@ const staticFolder = isProduction
 // we want one, because otherwise the request will not be relative to the root.
 const staticFolderWithSlash = `${isProduction ? '/' : ''}${staticFolder}`;
 
+const entryFirstHalf = isProduction ? [] : ['react-hot-loader/patch'];
+
 export default {
   entry: {
-    [`${staticFolderWithSlash}/bundle.js`]: [
+    [`${staticFolderWithSlash}/bundle.js`]: entryFirstHalf.concat([
       './src/index.jsx',
-    ].concat(
+    ]).concat(
       isProduction
         ? []
         : [
-          'react-hot-loader/patch',
           'webpack-dev-server/client?http://localhost:3000',
           'webpack/hot/only-dev-server',
         ]
