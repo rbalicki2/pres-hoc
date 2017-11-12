@@ -19,19 +19,20 @@ const staticFolderWithSlash = `${isProduction ? '/' : ''}${staticFolder}`;
 export default {
   entry: {
     [`${staticFolderWithSlash}/bundle.js`]: [
-      './src/index',
+      './src/index.jsx',
     ].concat(
       isProduction
         ? []
         : [
-          'webpack/hot/only-dev-server',
+          'react-hot-loader/patch',
           'webpack-dev-server/client?http://localhost:3000',
+          'webpack/hot/only-dev-server',
         ]
-      ),
+    ),
   },
   resolve: {
     modules: ['node_modules', __dirname],
-    extensions: ['.js', '.jsx', ''],
+    extensions: ['.js', '.jsx'],
     alias: {
       src: path.resolve(__dirname, 'src'),
       environment: path.join(
@@ -52,8 +53,7 @@ export default {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: (isProduction ? [] : ['react-hot'])
-          .concat(['babel']),
+        loaders: ['babel-loader'],
       },
 
       // scss
@@ -78,6 +78,9 @@ export default {
       }),
       new webpack.optimize.UglifyJsPlugin({ minimize: true, sourceMap: false }),
     ]
-    : [new webpack.HotModuleReplacementPlugin()]
+    : [
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+    ]
   ),
 };
