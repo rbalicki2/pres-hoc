@@ -15,6 +15,9 @@ if [ -z $S3_BUCKET_FOLDER ]; then
 fi
 
 echo "***** About to build with environment $NODE_ENV"
+ls
+ls ./node_modules
+ls ./node_modules/.bin
 npm run build
 
 if [ $? -ne 0 ]; then
