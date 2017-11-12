@@ -30,6 +30,7 @@ module.exports = {
     'react/no-direct-mutation-state': 2,
     'react/no-unused-prop-types': [2, {skipShapeProps: true }],
     'react/sort-comp': 0,
+    'react/prop-types': 0,
 
     'no-void': 0,
 
