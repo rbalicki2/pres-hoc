@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
 
-const SCROLL_RESIZE_DEBOUNCE_MS = 50;
+const SCROLL_RESIZE_DEBOUNCE_MS = 150;
 
 // TODO this seems a bit hacky to require this. What other properties do I need
 // to modify?
@@ -23,6 +23,11 @@ export default class WindowSizeScrollProvider extends Component {
     window.addEventListener('scroll', this.debouncedHandleScrollOrResize);
     window.addEventListener('resize', this.debouncedHandleScrollOrResize);
     this.handleScrollOrResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.debouncedHandleScrollOrResize);
+    window.removeEventListener('resize', this.debouncedHandleScrollOrResize);
   }
 
   handleScrollOrResize() {
