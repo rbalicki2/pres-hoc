@@ -6,7 +6,7 @@ const imageContainerStyle = {
 };
 
 export default ({ children }) => <div>
-  <Header />  
+  <Header />
   <div style={imageContainerStyle}>
     { children }
   </div>
