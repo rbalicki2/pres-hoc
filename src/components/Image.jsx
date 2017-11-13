@@ -10,8 +10,7 @@ const outerImageStyle = {
   paddingLeft: 10,
   paddingRight: 10,
   paddingBottom: 5,
-  verticalAlign: 'top',
-  minHeight: 250,
+  height: 'calc(33vw - 20px)',
   transition: 'opacity 1s ease-out',
 };
 

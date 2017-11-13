@@ -10,6 +10,7 @@ const isOnScreen = (w, br) => {
   const isOnScreenY = !(br.top > w.innerHeight || br.bottom < 0);
   // in reality, we would do the same for the isOnScreenX, but for
   // this demo, it doesn't matter.
+  console.log(isOnScreenY);
   return isOnScreenY;
 };
 
