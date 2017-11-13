@@ -10,3 +10,4 @@
 ## Exercises left for the reader:
 
 * Change `isOnScreen` from a boolean to an integer, indicating how far the component is from the screen. Then, start rendering the image when it is 50px from the screen.
+* Make another HOC that causes `isOnScreen` to never turn false, i.e. to turn it into a flag that turns on and stays on.
