@@ -11,8 +11,8 @@ const outerImageStyle = {
   paddingRight: 10,
   paddingBottom: 5,
   verticalAlign: 'top',
-  minHeight: 150,
-  transition: 'opacity 3s ease-out',
+  minHeight: 250,
+  transition: 'opacity 1s ease-out',
 };
 
 const outerImageInvisibleStyle = {
