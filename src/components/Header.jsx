@@ -12,7 +12,7 @@ const headerStyle = {
 
 const headerInsideStyle = {
   display: 'inline-block',
-}
+};
 
 export default () => <div style={headerStyle}>
   <div style={headerInsideStyle}>
