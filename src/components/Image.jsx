@@ -1,6 +1,7 @@
 import React from 'react';
 
 import IsOnScreenProvider from 'src/components/IsOnScreenProvider';
+import PersistProp from 'src/components/PersistProp';
 
 const getImageSrc = id => `https://s3.amazonaws.com/rb-pres-hoc/images/${id}.jpg`;
 
@@ -26,7 +27,10 @@ const innerImageStyle = {
 };
 
 export default ({ id }) => <IsOnScreenProvider>{isOnScreen =>
-  <div style={isOnScreen ? outerImageStyle : outerImageInvisibleStyle}>
-    <img style={innerImageStyle} src={isOnScreen ? getImageSrc(id) : ''} />
-  </div>
+  <PersistProp prop={isOnScreen} checkFalsy>{
+    persistedIsOnScreen =>
+      <div style={persistedIsOnScreen ? outerImageStyle : outerImageInvisibleStyle}>
+        <img style={innerImageStyle} src={persistedIsOnScreen ? getImageSrc(id) : ''} />
+      </div>
+  }</PersistProp>
 }</IsOnScreenProvider>;
